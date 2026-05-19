@@ -43,7 +43,14 @@ try {
     $mysqli->set_charset('utf8mb4');
     line_out('Database connection', true, DB_NAME);
 
-    $requiredTables = ['oge_users', 'oge_questions', 'oge_task_types', 'oge_topics'];
+    $requiredTables = [
+        'oge_users',
+        'oge_questions',
+        'oge_task_types',
+        'oge_topics',
+        'oge_pages',
+        'oge_home_blocks',
+    ];
     foreach ($requiredTables as $table) {
         $stmt = $mysqli->prepare(
             'SELECT 1 FROM information_schema.TABLES WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? LIMIT 1'

@@ -8,8 +8,9 @@ require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/authentication/auth.php';
 
 function fetch_one(mysqli $mysqli, string $sql): ?array {
-    $result = $mysqli->query($sql);
-    if (!$result) {
+    try {
+        $result = $mysqli->query($sql);
+    } catch (Throwable $exception) {
         return null;
     }
     $row = $result->fetch_assoc();
@@ -18,8 +19,9 @@ function fetch_one(mysqli $mysqli, string $sql): ?array {
 }
 
 function fetch_all(mysqli $mysqli, string $sql): array {
-    $result = $mysqli->query($sql);
-    if (!$result) {
+    try {
+        $result = $mysqli->query($sql);
+    } catch (Throwable $exception) {
         return [];
     }
     $rows = [];
