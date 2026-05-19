@@ -1,0 +1,155 @@
+:root {
+    --oge-bg: #f7f3ea;
+    --oge-surface: #fffdf8;
+    --oge-ink: #17211f;
+    --oge-muted: #61706c;
+    --oge-primary: #0f766e;
+    --oge-primary-dark: #0b5f59;
+    --oge-accent: #d97706;
+    --oge-soft: #e3f3ee;
+    --oge-border: #ddd5c7;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(180deg, rgba(227, 243, 238, .72), transparent 260px),
+        var(--oge-bg);
+    color: var(--oge-ink);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.site-navbar {
+    background: rgba(255, 253, 248, .94);
+    border-bottom: 1px solid var(--oge-border);
+    backdrop-filter: blur(14px);
+}
+
+.navbar-brand {
+    color: var(--oge-ink);
+    font-weight: 800;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--oge-primary);
+    color: #fff;
+    font-weight: 900;
+}
+
+.navbar-toggler {
+    border-color: var(--oge-border);
+}
+
+.navbar-toggler-icon {
+    filter: invert(.2);
+}
+
+.nav-link {
+    color: #33433f;
+    font-weight: 650;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--oge-primary);
+}
+
+.user-pill {
+    color: var(--oge-muted);
+}
+
+.site-main {
+    padding: 32px 0 56px;
+}
+
+.site-footer {
+    padding: 28px 0;
+    color: #ecfdf5;
+    background: #11221f;
+}
+
+.btn-primary,
+.btn-main {
+    background: var(--oge-primary);
+    border-color: var(--oge-primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-primary:hover,
+.btn-main:hover {
+    background: var(--oge-primary-dark);
+    border-color: var(--oge-primary-dark);
+    color: #fff;
+}
+
+.btn-outline-primary {
+    border-color: var(--oge-primary);
+    color: var(--oge-primary);
+}
+
+.btn-outline-primary:hover {
+    background: var(--oge-primary);
+    border-color: var(--oge-primary);
+}
+
+.card {
+    border-color: var(--oge-border);
+    border-radius: 8px;
+}
+
+.text-muted {
+    color: var(--oge-muted) !important;
+}
+
+.badge.text-bg-primary {
+    background: var(--oge-primary) !important;
+}
+
+.hero-oge {
+    margin: -8px 0 36px;
+    padding: 48px 0 22px;
+}
+
+.hero-oge h1 {
+    max-width: 780px;
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    line-height: 1;
+    font-weight: 900;
+}
+
+.hero-oge .lead {
+    max-width: 680px;
+    color: var(--oge-muted);
+    font-size: 1.12rem;
+}
+
+.hero-panel {
+    background: var(--oge-surface);
+    border: 1px solid var(--oge-border);
+    border-radius: 8px;
+    box-shadow: 0 22px 60px rgba(23, 33, 31, .08);
+}
+
+.section-title {
+    font-weight: 850;
+}
+
+.metric {
+    color: var(--oge-primary);
+    font-size: 2rem;
+    font-weight: 850;
+}
+
+.empty-state {
+    background: var(--oge-surface);
+    border: 1px dashed var(--oge-border);
+    border-radius: 8px;
+    padding: 24px;
+}
