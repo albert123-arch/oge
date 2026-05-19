@@ -45,8 +45,11 @@ try {
 
     $requiredTables = ['oge_users', 'oge_questions', 'oge_task_types', 'oge_topics'];
     foreach ($requiredTables as $table) {
-        $stmt = $mysqli->prepare('SHOW TABLES LIKE ?');
-        $stmt->bind_param('s', $table);
+        $stmt = $mysqli->prepare(
+            'SELECT 1 FROM information_schema.TABLES WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? LIMIT 1'
+        );
+        $dbName = DB_NAME;
+        $stmt->bind_param('ss', $dbName, $table);
         $stmt->execute();
         $result = $stmt->get_result();
         line_out('Table ' . $table, $result->num_rows > 0);
